@@ -43,3 +43,7 @@ function changeText(length_char){
    document.getElementById("myText").value = "";
 }
 changeText(length_char)
+function Restart(){
+   cIncorrect = 0;
+   document.getElementById("count").innerHTML = 0;
+}

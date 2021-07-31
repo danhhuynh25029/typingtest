@@ -52,7 +52,22 @@
     height: 100px;
     text-align: center;
 }
-
+.notifi .rest{
+    margin-top: 10px;
+    color: white;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    background-color:  #008CBA;
+    border-radius: 5px 5px;
+}
+.notifi .rest:hover{
+    opacity: 0.7;
+}
 /* .notifi p b{
     color: red;
 } */
