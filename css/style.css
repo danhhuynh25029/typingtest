@@ -43,3 +43,16 @@
 .test p{
     font-size: 21px;
 }
+.notifi{
+    font-size: 19px;
+    margin-top: 10px;
+    width: 200px;
+    float:left;
+
+    height: 100px;
+    text-align: center;
+}
+
+/* .notifi p b{
+    color: red;
+} */

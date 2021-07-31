@@ -13,10 +13,13 @@ function myFunction(ele) {
            document.getElementById("result").innerHTML = "incorrect";
            document.getElementById("result").style.color = "red";
          //   console.log(0);
+         cIncorrect +=1 ; 
+         console.log(cIncorrect);
         }
+        document.getElementById("count").innerHTML = cIncorrect.toString();
    }
 }
-
+var cIncorrect = 0;
 var sign = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 var length_char = Math.floor(Math.random() * 5)+1;
 var text = ["With you","hello world","My name is Lisa"]
