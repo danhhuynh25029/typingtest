@@ -20,7 +20,7 @@ function myFunction(ele) {
         document.getElementById("count").innerHTML = cIncorrect.toString();
    }
 }
-var timeLeft = 10;
+var timeLeft = 60;
 var cIncorrect = 0;
 var sumSign = 0;
 var sign = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
@@ -50,7 +50,7 @@ function changeText(length_char){
 changeText(length_char)
 function Restart(){
    cIncorrect = 0;
-   timeLeft = 10;
+   timeLeft = 60;
    document.getElementById("count").innerHTML = 0;
    document.getElementById("time").innerHTML = timeLeft.toString();
    countDown();
