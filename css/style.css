@@ -6,8 +6,10 @@
 .content{
     width: 50%;
     height: 190px;
-    border: 1px solid black;
+    border: 1px solid #dadada;
+    border-radius: 10px 10px;
     margin: auto;
+    margin-top: 10px;
 }
 .content p{
     text-align: center;
@@ -25,6 +27,13 @@
     width: 98%;
     height: 45px;
     font-size: 19px;
+    border: 2px solid #dadada;
+    border-radius: 3px;
+}
+.in input:focus{
+     outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 .test{
     padding-top: 10px;

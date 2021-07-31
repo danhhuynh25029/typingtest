@@ -4,9 +4,10 @@ function myFunction(ele) {
         if(text == ele.value){
            
            length_char = Math.floor(Math.random() * 5)+1;
-           changeText(length_char)
+           
            document.getElementById("result").innerHTML = "correct";
            document.getElementById("result").style.color = "green";
+           changeText(length_char)
          //   span.classList.add('red');
         }else{
            document.getElementById("result").innerHTML = "incorrect";
@@ -22,7 +23,7 @@ var text = ["With you","hello world","My name is Lisa"]
 function changeText(length_char){
    var text = "";
    for(var i = 1 ; i <= length_char ; i++){
-      var length_sign = Math.floor(Math.random()*4)+3;
+      var length_sign = Math.floor(Math.random()*2)+3;
       var str = ""
       for(var j = 0 ; j < length_sign ; j ++){
          str = str + sign[Math.floor(Math.random()*sign.length)]
