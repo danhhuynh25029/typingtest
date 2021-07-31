@@ -11,13 +11,15 @@
 <body>
     <div class="notifi">
         <p>Tổng số lỗi : <b id="count">0</b> </p>
-        <button onclick="Restart()" class="rest">Restart</button>
+        <p id="speed"></p>
+        <button onclick="Restart()" id="start" class="rest">start</button>
     </div>
     <div class="content">
         <p id="text"></p>
     </div>
     <div class="in">
         <input type="text" id="myText" value="" placeholder="Your input" onkeydown="myFunction(this)">
+        <p id="time">1:00</p>
     </div>
     <div class="test">
         <p id="result"></p>

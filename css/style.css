@@ -24,10 +24,20 @@
 }
 .in input{
     padding-left: 10px;
-    width: 98%;
+    width: 88%;
     height: 45px;
     font-size: 19px;
     border: 2px solid #dadada;
+    border-radius: 3px;
+}
+.in p{
+    height: 45px;
+    line-height: 45px;
+    font-size: 19px;
+    color: white;
+    background-color: #008CBA;
+    width: 9%;
+    display: inline-block;
     border-radius: 3px;
 }
 .in input:focus{
