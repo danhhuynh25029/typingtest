@@ -3,9 +3,8 @@ function myFunction(ele) {
         var text = document.getElementById("text").innerHTML;
         if(text == ele.value){
            
-           index = Math.floor(Math.random() * 3);
-           changeText(index)
-           console.log(index);
+           length_char = Math.floor(Math.random() * 5)+1;
+           changeText(length_char)
            document.getElementById("result").innerHTML = "correct";
            document.getElementById("result").style.color = "green";
          //   span.classList.add('red');
@@ -16,10 +15,27 @@ function myFunction(ele) {
         }
    }
 }
-var index = Math.floor(Math.random() * 3);
+
+var sign = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+var length_char = Math.floor(Math.random() * 5)+1;
 var text = ["With you","hello world","My name is Lisa"]
-function changeText(index){
-   document.getElementById("text").innerHTML = text[index]
+function changeText(length_char){
+   var text = "";
+   for(var i = 1 ; i <= length_char ; i++){
+      var length_sign = Math.floor(Math.random()*4)+3;
+      var str = ""
+      for(var j = 0 ; j < length_sign ; j ++){
+         str = str + sign[Math.floor(Math.random()*sign.length)]
+      }
+      if( i != length_char){
+         str += " "
+         text = text + str
+      }else{
+         text = text + str
+      }
+
+   }
+   document.getElementById("text").innerHTML = text
    document.getElementById("myText").value = "";
 }
-changeText(index)
+changeText(length_char)
