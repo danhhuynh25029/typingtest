@@ -58,9 +58,9 @@
     margin-top: 10px;
     width: 200px;
     float:left;
-
     height: 100px;
-    text-align: center;
+    /* text-align: center; */
+    padding-left: 30px;
 }
 .notifi .rest{
     margin-top: 10px;

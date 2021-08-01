@@ -1,4 +1,5 @@
 function myFunction(ele) {
+   if(start == true){
    if(event.key === "Enter"){
         var text = document.getElementById("text").innerHTML;
         if(text == ele.value){
@@ -20,9 +21,11 @@ function myFunction(ele) {
         document.getElementById("count").innerHTML = cIncorrect.toString();
    }
 }
+}
 var timeLeft = 60;
 var cIncorrect = 0;
 var sumSign = 0;
+var start = false;
 var sign = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 var length_char = Math.floor(Math.random() * 5)+1;
 var text = ["With you","hello world","My name is Lisa"]
@@ -50,6 +53,7 @@ function changeText(length_char){
 changeText(length_char)
 function Restart(){
    cIncorrect = 0;
+   start = true;
    timeLeft = 60;
    document.getElementById("count").innerHTML = 0;
    document.getElementById("time").innerHTML = timeLeft.toString();
@@ -62,7 +66,7 @@ function countDown(){
          document.getElementById("start").innerHTML = "restart";
          clearInterval(iter)
          // result()
-         document.getElementById("speed").innerHTML ="Tốc độ gõ : "+(sumSign / 5).toString() + " WPM";
+         document.getElementById("speed").innerHTML ="Tốc độ gõ : <b>"+(sumSign / 5).toString() + "</b> WPM";
       }
       document.getElementById("time").innerHTML = timeLeft;
       timeLeft -= 1;
