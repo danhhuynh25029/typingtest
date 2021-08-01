@@ -1,27 +1,35 @@
 function myFunction(ele) {
    if(start == true){
-   if(event.key === "Enter"){
-        var text = document.getElementById("text").innerHTML;
-        if(text == ele.value){
-           var str = text.replace('/\s+/g','');
+   if(event.keyCode === 32){
+      var tmp = document.getElementsByTagName("span");
+      var text = document.getElementById("text").innerHTML;
+        if(ele.value.trim() == tmp[indexText].innerHTML){
+           var str = text.split(' ').join('');
+           tmp[indexText].style.opacity = "0.5";
            sumSign += str.length;
-           length_char = Math.floor(Math.random() * 5)+1;
-           
+           length_char -= 1;   
+           indexText += 1;
            document.getElementById("result").innerHTML = "correct";
            document.getElementById("result").style.color = "green";
-           changeText(length_char)
+           document.getElementById("myText").value = "";
+           if (length_char == 0){
+            length_char = Math.floor(Math.random() * 5)+1;
+            changeText(length_char);
+           }
+         //   
          //   span.classList.add('red');
         }else{
            document.getElementById("result").innerHTML = "incorrect";
            document.getElementById("result").style.color = "red";
          //   console.log(0);
          cIncorrect +=1 ; 
-         console.log(cIncorrect);
+         // console.log(cIncorrect);
         }
         document.getElementById("count").innerHTML = cIncorrect.toString();
    }
 }
 }
+var indexText = 0;
 var timeLeft = 60;
 var cIncorrect = 0;
 var sumSign = 0;
@@ -32,12 +40,14 @@ var text = ["With you","hello world","My name is Lisa"]
 document.getElementById("time").innerHTML = timeLeft;
 function changeText(length_char){
    var text = "";
+   indexText  = 0;
    for(var i = 1 ; i <= length_char ; i++){
       var length_sign = Math.floor(Math.random()*2)+3;
       var str = "";
       for(var j = 0 ; j < length_sign ; j ++){
          str = str + sign[Math.floor(Math.random()*sign.length)]
       }
+      str = "<span>"+str+"</span>";
       if( i != length_char){
          str += " "
          text = text + str
@@ -51,14 +61,23 @@ function changeText(length_char){
 }
 
 changeText(length_char)
+// Restart time
 function Restart(){
    cIncorrect = 0;
-   start = true;
+   if(start == false){
+      start = true;
+   }else{
+      length_char = Math.floor(Math.random() * 5)+1;
+      changeText(length_char);
+   }
    timeLeft = 60;
+   
    document.getElementById("count").innerHTML = 0;
    document.getElementById("time").innerHTML = timeLeft.toString();
+   document.getElementById("speed").innerHTML = "";
    countDown();
 }
+// Time count down
 function countDown(){
    var iter = setInterval(function(){
       if(timeLeft <= 0){
