@@ -6,7 +6,7 @@ function myFunction(ele) {
         if(ele.value.trim() == tmp[indexText].innerHTML){
            var str = text.split(' ').join('');
            tmp[indexText].style.color = "green";
-           sumSign += str.length;
+           sumSign += ele.value.trim().length;
            length_char -= 1;   
            indexText += 1;
            document.getElementById("result").innerHTML = "correct";
