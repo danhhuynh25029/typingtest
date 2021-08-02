@@ -5,7 +5,7 @@ function myFunction(ele) {
       var text = document.getElementById("text").innerHTML;
         if(ele.value.trim() == tmp[indexText].innerHTML){
            var str = text.split(' ').join('');
-           tmp[indexText].style.opacity = "0.5";
+           tmp[indexText].style.color = "green";
            sumSign += str.length;
            length_char -= 1;   
            indexText += 1;
@@ -19,10 +19,18 @@ function myFunction(ele) {
          //   
          //   span.classList.add('red');
         }else{
+         tmp[indexText].style.color = "red";
+         indexText += 1;
+           document.getElementById("myText").value = "";
            document.getElementById("result").innerHTML = "incorrect";
            document.getElementById("result").style.color = "red";
          //   console.log(0);
          cIncorrect +=1 ; 
+         length_char -= 1;
+         if (length_char == 0){
+            length_char = Math.floor(Math.random() * 5)+1;
+            changeText(length_char);
+         }
          // console.log(cIncorrect);
         }
         document.getElementById("count").innerHTML = cIncorrect.toString();
